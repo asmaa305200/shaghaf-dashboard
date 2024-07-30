@@ -1,0 +1,32 @@
+<div class="container body  mx-auto">
+
+<div class="image-upload-container"> 
+
+  <div class="btns">
+    <h5>Image:</h5>
+      <input type="file" class="form-control" (change)="onFileChange($event)" accept="image/*" />
+        <button class="btn " (click)="submitImage()">Add Ad</button>
+</div>
+
+  <div *ngIf="imageSrc">
+    <img [src]="imageSrc" alt="Image preview" class="image-preview" />
+  </div>
+  
+  <table class="table">
+    <thead class="w-100">
+      <tr>
+        <th>Cover</th>
+        <th> Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let image of images">
+        <td><img [src]="image.src" alt="Image" class="table-image" /></td>
+        <td>{{ image.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</div>

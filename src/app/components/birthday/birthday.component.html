@@ -1,0 +1,88 @@
+<div class="container body mx-auto">
+  <div class="image-upload-container">
+    <div class="btns row g-4">
+      <div class="col-4">
+        <label for="user-image">Profile Image:</label>
+        <input
+          id="user-image"
+          type="file"
+          class="form-control"
+          (change)="onFileChange($event)"
+        />
+        <img
+          *ngIf="imageSrc"
+          [src]="imageSrc"
+          alt="Image preview"
+          class="image-preview mt-2"
+        />
+      </div>
+
+      <div class="col-4">
+        <label for="user-price">Price:</label>
+        <input
+          id="user-price"
+          type="number"
+          class="form-control"
+          [(ngModel)]="price"
+        />
+      </div>
+
+      <div class="col-4">
+        <label for="user-title">Title:</label>
+        <input
+          id="user-title"
+          type="text"
+          class="form-control"
+          [(ngModel)]="title"
+        />
+      </div>
+
+      <div class="col-4">
+        <label for="user-gender">Gender:</label>
+        <select id="user-gender" class="form-control" [(ngModel)]="gender">
+          <option value="" disabled>Select Gender</option>
+          <option
+            *ngFor="let genderOption of genderOptions"
+            [value]="genderOption"
+          >
+            {{ genderOption }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3" (click)="submitUser()">
+      Add User
+    </button>
+
+    <div class="mt-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Cover</th>
+            <th>price</th>
+            <th>Title</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>
+              <img
+                *ngIf="user.imageSrc"
+                [src]="user.imageSrc"
+                alt="User Image"
+                class="image-preview"
+              />
+            </td>
+            <td>{{ user.price }}</td>
+            <td>{{ user.title }}</td>
+            <td>{{ user.gender }}</td>
+            <td>
+              <i class="fa-solid fa-trash trash" (click)="deleteUser(i)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

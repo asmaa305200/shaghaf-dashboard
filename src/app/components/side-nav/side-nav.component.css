@@ -1,0 +1,40 @@
+
+.iconn{
+    margin-left: 20px;
+    margin-top: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.over-all{
+    /* background-color: antiquewhite; */
+    width: 200px;
+    height: 100vh;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 20px;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.ads , .offers , .products , .accounts , .birthday {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content:center !important;
+    margin-block: 25px;
+    
+}
+.icon {
+    font-size: 20px;
+    color: orangered;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 17px;
+        
+}

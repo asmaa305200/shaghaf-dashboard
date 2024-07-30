@@ -1,0 +1,49 @@
+.body{
+    height: 100vh;
+    margin-top: 60px; 
+}
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+  
+}
+.btn{
+    padding-inline: 30px;
+  background-color: rgb(31, 78, 31);
+    color: white;
+  
+}
+.image-preview {
+    max-width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.table-image {
+    width: 100px;
+    height: auto;
+}
+
+table {
+    margin-top: 20px;  
+    width: 1000px ;
+
+    }
+
+th,
+td {
+    border: none !important;
+    padding: 8px;
+    text-align: center;       
+}
+
+th {
+    background-color: #f4f4f4;
+      
+}
