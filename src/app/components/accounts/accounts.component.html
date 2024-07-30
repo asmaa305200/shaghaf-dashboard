@@ -1,0 +1,67 @@
+<div class="container body mx-auto">
+  <div class="image-upload-container">
+    <div class="btns row g-4">
+      <div class="col-4">
+        <label for="user-name">User Name:</label>
+        <input id="user-name" type="text" class="form-control" [(ngModel)]="name" />
+      </div>
+
+      <div class="col-4">
+        <label for="user-bd">Birthday:</label>
+        <input id="user-bd" type="date" class="form-control" [(ngModel)]="birthday" />
+      </div>
+      
+      <div class="col-4">
+        <label for="user-phone">Phone:</label>
+        <input id="user-phone" type="number" class="form-control" [(ngModel)]="phone" placeholder="phone..." />
+      </div>
+      
+      <div class="col-4">
+        <label for="user-password">Password:</label>
+        <input id="user-password" type="password" class="form-control" [(ngModel)]="password" />
+      </div>
+      
+      <div class="col-4">
+        <label for="user-email">Email:</label>
+        <input id="user-email" type="email" class="form-control" [(ngModel)]="email" />
+      </div>
+      
+      <div class="col-4">
+        <label for="user-gender">Gender:</label>
+        <select id="user-gender" class="form-control" [(ngModel)]="gender">
+          <option value="" disabled>Select Gender</option>
+          <option *ngFor="let genderOption of genderOptions" [value]="genderOption">
+            {{ genderOption }}
+          </option>
+        </select>
+      </div>
+      
+    </div>
+    <button class="btn btn-primary mt-3" (click)="submitUser()">Add User</button>
+
+    <div class="mt-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Birthday</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>{{ user.name }}</td>
+            <td>{{ user.birthday }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.gender }}</td>
+            <td><i class="fa-solid fa-trash trash" (click)="deleteUser(i)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

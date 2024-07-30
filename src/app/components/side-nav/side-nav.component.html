@@ -1,0 +1,28 @@
+<div><i class="fa-solid fa-bars iconn d-flex" (click)="toggle()"></i></div>
+<div class="over-all">
+  <div class="side-nav">
+    <div class="logo">
+      <img src="../../../assets/earth.png" alt="" />
+    </div>
+    <div class="ads" [routerLink]="['/ads']">
+      <div class="icon"><i class="fa-solid fa-arrow-pointer"></i></div>
+      <div class="title">Create Ads</div>
+    </div>
+    <div class="accounts" [routerLink]="['/accounts']">
+      <div class="icon"><i class="fa-solid fa-user"></i></div>
+      <div class="title">Create Accounts</div>
+    </div>
+    <div class="products" [routerLink]="['/products']">
+      <div class="icon"><i class="fa-solid fa-shop"></i></div>
+      <div class="title">Products</div>
+    </div>
+    <div class="offers" [routerLink]="['/offers']">
+      <div class="icon"><i class="fa-solid fa-ticket-simple"></i></div>
+      <div class="title">Create Offers</div>
+    </div>
+    <div class="birthday" [routerLink]="['/birthday']">
+      <div class="icon"><i class="fa-solid fa-cake-candles"></i></div>
+      <div class="title">Create Birthday</div>
+    </div>
+  </div>
+</div>
